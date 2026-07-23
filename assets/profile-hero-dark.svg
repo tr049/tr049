@@ -41,22 +41,20 @@
         0%, 49% { transform: none; }
         50%, 100% { transform: translateY(1.5px); }
       }
+      .typebar { opacity: 0; animation: typebar 4.5s steps(12) 0.4s forwards; }
+      @keyframes typebar {
+        0%   { transform: translate(448px, 104px); opacity: 1; }
+        38%  { transform: translate(596px, 104px); opacity: 1; }
+        44%  { transform: translate(448px, 134px); opacity: 1; }
+        66%  { transform: translate(534px, 134px); opacity: 1; }
+        78%, 100% { transform: translate(534px, 134px); opacity: 0; }
+      }
       .glow { animation: pulse 4s ease-in-out infinite; }
       @keyframes pulse {
         0%, 100% { opacity: 1; }
         50% { opacity: 0.62; }
       }
     </style>
-    <clipPath id="typeL1">
-      <rect x="440" y="100" width="0" height="26">
-        <animate attributeName="width" values="0;12;24;36;48;60;72;84;96;108;120;132;144;156;168;180;192;204" dur="1.3s" begin="0.4s" fill="freeze" calcMode="discrete"/>
-      </rect>
-    </clipPath>
-    <clipPath id="typeL2">
-      <rect x="440" y="130" width="0" height="26">
-        <animate attributeName="width" values="0;11;22;33;44;55;66;77;88" dur="0.7s" begin="1.9s" fill="freeze" calcMode="discrete"/>
-      </rect>
-    </clipPath>
   </defs>
 
   <!-- outer card -->
@@ -94,8 +92,9 @@
   <text x="492" y="62" font-size="12" fill="#6e7681">/github/tr049/</text>
 
   <g font-size="14">
-    <g clip-path="url(#typeL1)"><text x="442" y="118"><tspan fill="#7aa2f7">&gt;</tspan><tspan fill="#c9d1d9" dx="8">identity.loaded</tspan></text></g>
-    <g clip-path="url(#typeL2)"><text x="442" y="148"><tspan fill="#6e7681">$</tspan><tspan fill="#8b949e" dx="8">whoami</tspan></text></g>
+    <text x="442" y="118"><tspan fill="#7aa2f7">&gt;</tspan><tspan fill="#c9d1d9" dx="8">identity.loaded</tspan></text>
+    <text x="442" y="148"><tspan fill="#6e7681">$</tspan><tspan fill="#8b949e" dx="8">whoami</tspan></text>
+    <rect class="typebar" x="0" y="0" width="8" height="15" fill="#c9d1d9"/>
 
     <text x="442" y="192" font-size="18" font-weight="bold">
       <tspan fill="#f0f6fc">@tr049</tspan>
